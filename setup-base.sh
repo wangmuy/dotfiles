@@ -34,6 +34,7 @@ apt-get update
 # bbr
 echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
 echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+sysctl -p
 
 # docker
 apt-get install apt-transport-https ca-certificates
