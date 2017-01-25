@@ -31,6 +31,9 @@ apt-get update
 apt-get install linux-image-4.9.0-12-generic linux-image-extra-4.9.0-12-generic linux-headers-4.9.0-12
 sed -i '$ d' /etc/apt/sources.list
 apt-get update
+# bbr
+echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
 
 # docker
 apt-get install apt-transport-https ca-certificates
